@@ -6,7 +6,7 @@
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:32:52 by mboivin           #+#    #+#             */
-/*   Updated: 2020/07/27 23:22:59 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/07/28 00:11:23 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,7 @@ t_vec2			sub_vec2(t_vec2 a, t_vec2 b);
 t_vec2			mult_vec2(t_vec2 a, t_vec2 b);
 t_vec2			div_vec2(t_vec2 a, t_vec2 b);
 t_vec2			scale_vec2(double scalar, t_vec2 vec);
+
+double			dot_vec2(t_vec2 a, t_vec2 b);
 
 #endif

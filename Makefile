@@ -18,9 +18,11 @@ OBJ_PATH = obj
 vpath %.c $(foreach dir, $(SRC_PATH), $(dir):)
 
 SRC		=		ft_vec2.c			\
-				ft_vec2.c			\
-				ft_vec_op3.c			\
-				ft_vec_op3.c			\
+				ft_vec3.c			\
+				ft_vec2_op.c		\
+				ft_vec3_op.c		\
+				ft_vec2_prod.c		\
+				ft_vec3_prod.c		\
 
 OBJ = $(addprefix $(OBJ_PATH)/, $(SRC:%.c=%.o))
 
