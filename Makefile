@@ -1,4 +1,4 @@
-NAME = minilib_math.a
+NAME = minimath.a
 
 SHELL = /bin/sh
 CC = gcc

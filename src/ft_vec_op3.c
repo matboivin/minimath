@@ -6,11 +6,11 @@
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:38:29 by mboivin           #+#    #+#             */
-/*   Updated: 2020/07/27 22:02:46 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/07/27 22:23:12 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minilib_math.h"
+#include "minimath.h"
 
 t_vec3		add_vec3(t_vec3 a, t_vec3 b)
 {
