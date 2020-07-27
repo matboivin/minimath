@@ -1,53 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_vec_op.c                                        :+:      :+:    :+:   */
+/*   ft_vec2.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:38:29 by mboivin           #+#    #+#             */
-/*   Updated: 2020/07/27 21:57:06 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/07/27 22:17:40 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minilib_math.h"
 
-t_vec3		add_vec3(t_vec3 a, t_vec3 b)
-{
-	t_vec3	result;
+/*
+** 2D Vector
+**
+** create_vec2()  :  Constructor
+** malloc_vec2()  :  Malloc function
+** destroy_vec2() :  Destructor
+** free_vec2()    :  Free function
+*/
 
-	result.x = a.x + b.x;
-	result.y = a.y + b.y;
-	result.z = a.z + b.z;
+t_vec2		create_vec2(double p_x, double p_y)
+{
+	t_vec2	result;
+
+	result.x = p_x;
+	result.y = p_y;
 	return (result);
 }
 
-t_vec3		sub_vec3(t_vec3 a, t_vec3 b)
+t_vec2		*malloc_vec2(double p_x, double p_y)
 {
-	t_vec3	result;
+	t_vec2	*result;
 
-	result.x = a.x - b.x;
-	result.y = a.y - b.y;
-	result.z = a.z - b.z;
+	result = (t_vec2 *)malloc(sizeof(t_vec2));
+	if (result == NULL)
+		return (NULL);
+	*result = create_vec2(p_x, p_y);
 	return (result);
 }
 
-t_vec3		mult_vec3(t_vec3 a, t_vec3 b)
+void		destroy_vec2(t_vec2 to_destroy)
 {
-	t_vec3	result;
-
-	result.x = a.x * b.x;
-	result.y = a.y * b.y;
-	result.z = a.z * b.z;
-	return (result);
+	(void)to_destroy;
 }
 
-t_vec3		div_vec3(t_vec3 a, t_vec3 b)
+void		free_vec2(t_vec2 *to_free)
 {
-	t_vec3	result;
-
-	result.x = a.x / b.x;
-	result.y = a.y / b.y;
-	result.z = a.z / b.z;
-	return (result);
+	destroy_vec2(*to_free);
+	free(to_free);
 }

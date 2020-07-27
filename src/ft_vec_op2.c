@@ -1,29 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_vector3.c                                       :+:      :+:    :+:   */
+/*   ft_vec_op2.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:38:29 by mboivin           #+#    #+#             */
-/*   Updated: 2020/07/27 21:57:15 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/07/27 22:02:32 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minilib_math.h"
 
-/*
-** 3D Vector
-**
-** create_vec3() :  Constructor
-*/
-
-t_vec3		create_vec3(double p_x, double p_y, double p_z)
+t_vec2		add_vec3(t_vec2 a, t_vec2 b)
 {
-	t_vec3	result;
+	t_vec2	result;
 
-	result.x = p_x;
-	result.y = p_y;
-	result.z = p_z;
+	result.x = a.x + b.x;
+	result.y = a.y + b.y;
+	return (result);
+}
+
+t_vec2		sub_vec3(t_vec2 a, t_vec2 b)
+{
+	t_vec2	result;
+
+	result.x = a.x - b.x;
+	result.y = a.y - b.y;
+	return (result);
+}
+
+t_vec2		mult_vec2(t_vec2 a, t_vec2 b)
+{
+	t_vec2	result;
+
+	result.x = a.x * b.x;
+	result.y = a.y * b.y;
+	return (result);
+}
+
+t_vec2		div_vec3(t_vec2 a, t_vec2 b)
+{
+	t_vec2	result;
+
+	result.x = a.x / b.x;
+	result.y = a.y / b.y;
 	return (result);
 }
