@@ -1,4 +1,4 @@
-NAME = minimath.a
+NAME = libminimath.a
 
 SHELL = /bin/sh
 CC = gcc
