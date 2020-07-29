@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minimath.h                                         :+:      :+:    :+:   */
+/*   ft_mat3x3.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/20 21:32:52 by mboivin           #+#    #+#             */
-/*   Updated: 2020/07/29 01:20:57 by mboivin          ###   ########.fr       */
+/*   Created: 2020/07/20 21:38:29 by mboivin           #+#    #+#             */
+/*   Updated: 2020/07/29 02:01:58 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINIMATH_H
-# define MINIMATH_H
+#include "minimath.h"
 
-# include <math.h>
-# include <stdlib.h>
+/*
+** 3x3 Matrice
+** 
+** [0, 1, 2,
+**  3, 4, 5,
+**  6, 7, 8]
+*/
 
-# include "minimath_vec2.h"
-# include "minimath_vec3.h"
-# include "minimath_mat.h"
-
-#endif
+void	create_mat3x3(t_mat_3x3 result, t_vec3 a, t_vec3 b, t_vec3 c)
+{
+	result[0] = a;
+	result[1] = b;
+	result[2] = c;
+}

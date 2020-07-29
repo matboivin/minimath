@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minimath.h                                         :+:      :+:    :+:   */
+/*   minimath_mat.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:32:52 by mboivin           #+#    #+#             */
-/*   Updated: 2020/07/29 01:20:57 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/07/29 01:58:18 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINIMATH_H
-# define MINIMATH_H
+#ifndef MINIMATH_MAT_H
+# define MINIMATH_MAT_H
 
-# include <math.h>
-# include <stdlib.h>
+typedef t_vec3	t_mat_3x3[3];
 
-# include "minimath_vec2.h"
-# include "minimath_vec3.h"
-# include "minimath_mat.h"
+
+void			create_mat3x3(t_mat_3x3 result, t_vec3 a, t_vec3 b, t_vec3 c);
+void			mult_mat3x3(t_mat_3x3 result, t_vec3 vec);
 
 #endif
