@@ -1,6 +1,8 @@
-# minilib_math
+# minimath
 
-Mini linear algebra library for 42 Graphics projects.
+Mini linear algebra library for 42 School Graphics projects.
+
+:warning: Work In Progress: Don't use.
 
 ### Prerequisites
 
