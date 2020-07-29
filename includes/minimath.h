@@ -6,7 +6,7 @@
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:32:52 by mboivin           #+#    #+#             */
-/*   Updated: 2020/07/29 01:20:57 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/07/29 02:23:45 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@
 
 # include "minimath_vec2.h"
 # include "minimath_vec3.h"
-# include "minimath_mat.h"
+# include "minimath_mat3x3.h"
 
 #endif
