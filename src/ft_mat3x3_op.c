@@ -6,7 +6,7 @@
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:38:29 by mboivin           #+#    #+#             */
-/*   Updated: 2020/07/29 02:24:14 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/07/29 02:38:31 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,18 @@
 /*
 ** 3x3 Matrice
 ** 
-** [[0, 1, 2],   [x,
-**  [3, 4, 5], *  y,
-**  [6, 7, 8]]    z]
+** [[0, 1, 2],
+**  [3, 4, 5],
+**  [6, 7, 8]]
 */
 
-t_mat3x3		mult_mat3x3(t_mat3x3 mat, t_vec3 vec)
+t_vec3			mult_mat3x3(t_mat3x3 mat, t_vec3 vec)
 {
-	t_mat3x3	result;
+	t_vec3		result;
 
-	result.c1 = mult_vec3(mat.c1, vec);
-	result.c2 = mult_vec3(mat.c2, vec);
-	result.c3 = mult_vec3(mat.c3, vec);
+	result.x = dot_vec3(mat.c1, vec);
+	result.y = dot_vec3(mat.c2, vec);
+	result.z = dot_vec3(mat.c3, vec);
 	return (result);
 }
 

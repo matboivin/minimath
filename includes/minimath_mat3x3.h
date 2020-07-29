@@ -6,7 +6,7 @@
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:32:52 by mboivin           #+#    #+#             */
-/*   Updated: 2020/07/29 02:24:04 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/07/29 02:38:25 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ typedef struct	s_mat3x3
 }				t_mat3x3;
 
 t_mat3x3		create_mat3x3(t_vec3 a, t_vec3 b, t_vec3 c);
-t_mat3x3		mult_mat3x3(t_mat3x3 result, t_vec3 vec);
+t_vec3			mult_mat3x3(t_mat3x3 result, t_vec3 vec);
 t_mat3x3		schur_mat3x3(t_mat3x3 mat1, t_mat3x3 mat2);
 
 #endif
