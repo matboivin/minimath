@@ -6,7 +6,7 @@
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:38:29 by mboivin           #+#    #+#             */
-/*   Updated: 2020/07/29 16:19:10 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/07/30 21:35:07 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,14 @@
 /*
 ** 3x3 Matrix
 **
-** [[0, 1, 2,]
+** [[0, 1, 2],
 **  [3, 4, 5],
 **  [6, 7, 8]]
+**
+** create_mat3x3()  :  Constructor
+** malloc_mat3x3()  :  Malloc function
+** destroy_mat3x3() :  Destructor
+** free_mat3x3()    :  Free function
 */
 
 t_mat3x3		create_mat3x3(t_vec3 a, t_vec3 b, t_vec3 c)
@@ -28,4 +33,28 @@ t_mat3x3		create_mat3x3(t_vec3 a, t_vec3 b, t_vec3 c)
 	result.c2 = b;
 	result.c3 = c;
 	return (result);
+}
+
+t_mat3x3		*malloc_mat3x3(t_vec3 a, t_vec3 b, t_vec3 c)
+{
+	t_mat3x3	*result;
+
+	result = (t_mat3x3 *)malloc(sizeof(t_mat3x3));
+	if (result == NULL)
+		return (NULL);
+	*result = create_mat3x3(a, b, c);
+	return (result);
+}
+
+void			destroy_mat3x3(t_mat3x3 to_destroy)
+{
+	free_vec3(&to_destroy.c1);
+	free_vec3(&to_destroy.c2);
+	free_vec3(&to_destroy.c3);
+}
+
+void			free_mat3x3(t_mat3x3 *to_free)
+{
+	destroy_mat3x3(*to_free);
+	free(to_free);
 }
