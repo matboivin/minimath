@@ -24,6 +24,8 @@ SRC		=		ft_vec2.c			\
 				ft_vec3_op.c		\
 				ft_vec3_prod.c		\
 				ft_vec4.c			\
+				ft_vec4_op.c		\
+				ft_vec4_prod.c		\
 				ft_mat3x3.c			\
 				ft_mat3x3_op.c		\
 				ft_mat4x4.c			\

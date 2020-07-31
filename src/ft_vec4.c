@@ -6,7 +6,7 @@
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:38:29 by mboivin           #+#    #+#             */
-/*   Updated: 2020/07/31 21:10:41 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/07/31 21:40:15 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 ** destroy_vec4() :  Destructor
 ** free_vec4()    :  Free function
 */
+
 t_vec4		create_vec4(double p_x, double p_y, double p_z, double p_w)
 {
 	t_vec4	result;
