@@ -6,7 +6,7 @@
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:38:29 by mboivin           #+#    #+#             */
-/*   Updated: 2020/07/31 21:39:43 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/08/03 21:58:42 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 double		dot_vec4(t_vec4 a, t_vec4 b)
 {
-	t_vec4	vec;
 	double	result;
+	t_vec4	tmp;
 
-	vec = mult_vec4(a, b);
-	result = vec.x + vec.y + vec.z + vec.w;
+	tmp = mult_vec4(a, b);
+	result = tmp.x + tmp.y + tmp.z + tmp.w;
 	return (result);
 }

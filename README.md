@@ -12,10 +12,10 @@ GNU make and a C compiler.
 
 Clone the repository, change it to your working directory and run:
 ```console
-make
+$ make
 ```
 
 To use the library:
 ```console
-gcc foo.c -L. -lminimath
+$ gcc foo.c -L. -lminimath
 ```
