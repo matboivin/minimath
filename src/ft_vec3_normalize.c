@@ -6,7 +6,7 @@
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:38:29 by mboivin           #+#    #+#             */
-/*   Updated: 2020/08/03 22:34:56 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/08/03 22:47:01 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@ t_vec3		normalize_vec3(t_vec3 v)
 	t_vec3	result;
 	double	len;
 
-	result = create_vec3(0.0, 0.0, 0.0);
 	len = len_vec3(v);
 	if (len > 0)
 	{
 		len = 1 / len;
 		result = scale_vec3(len, result);
+		return (result);
 	}
-	return (result);
+	return (v);
 }
