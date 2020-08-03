@@ -6,7 +6,7 @@
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:38:29 by mboivin           #+#    #+#             */
-/*   Updated: 2020/07/27 23:57:23 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/08/03 22:39:10 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,12 @@ t_vec3		div_vec3(t_vec3 a, t_vec3 b)
 	return (result);
 }
 
-t_vec3		scale_vec3(double scalar, t_vec3 vec)
+t_vec3		scale_vec3(double scalar, t_vec3 v)
 {
 	t_vec3	result;
 
-	result.x = scalar * vec.x;
-	result.y = scalar * vec.y;
-	result.z = scalar * vec.z;
+	result.x = scalar * v.x;
+	result.y = scalar * v.y;
+	result.z = scalar * v.z;
 	return (result);
 }

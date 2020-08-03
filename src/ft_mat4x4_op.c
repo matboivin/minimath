@@ -6,7 +6,7 @@
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:38:29 by mboivin           #+#    #+#             */
-/*   Updated: 2020/08/03 21:59:17 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/08/03 22:36:58 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,16 +53,16 @@ t_mat4x4		transpose_mat4x4(t_mat4x4 mat)
 **  [12, 13, 14, 15]]
 */
 
-t_vec4			mult_mat4x4_vec4(t_mat4x4 mat, t_vec4 vec)
+t_vec4			mult_mat4x4_vec4(t_mat4x4 mat, t_vec4 v)
 {
 	t_mat4x4	tmp_mat;
 	t_vec4		result;
 
 	tmp_mat = transpose_mat4x4(mat);
-	result.x = dot_vec4(tmp_mat.c1, vec);
-	result.y = dot_vec4(tmp_mat.c2, vec);
-	result.z = dot_vec4(tmp_mat.c3, vec);
-	result.w = dot_vec4(tmp_mat.c4, vec);
+	result.x = dot_vec4(tmp_mat.c1, v);
+	result.y = dot_vec4(tmp_mat.c2, v);
+	result.z = dot_vec4(tmp_mat.c3, v);
+	result.w = dot_vec4(tmp_mat.c4, v);
 	return (result);
 }
 

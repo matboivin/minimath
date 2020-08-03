@@ -6,7 +6,7 @@
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:38:29 by mboivin           #+#    #+#             */
-/*   Updated: 2020/08/03 21:58:05 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/08/03 22:40:15 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,7 @@
 
 double		dot_vec3(t_vec3 a, t_vec3 b)
 {
-	double	result;
-	t_vec3	tmp;
-
-	tmp = mult_vec3(a, b);
-	result = tmp.x + tmp.y + tmp.z;
-	return (result);
+	return ((a.x * b.x) + (a.y * b.y) + (a.z * b.z));
 }
 
 t_vec3		cross(t_vec3 a, t_vec3 b)
