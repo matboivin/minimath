@@ -7,6 +7,7 @@ AR = ar
 ARFLAGS = -rcs
 CFLAGS = -Wall -Wextra -Werror
 IFLAGS = -I$(INC_PATH)
+LFLAGS = -lm
 
 .SUFFIXE:
 .SUFFIXES: .c .o .h
@@ -22,9 +23,11 @@ SRC		=		ft_vec2.c			\
 				ft_vec2_prod.c		\
 				ft_vec3.c			\
 				ft_vec3_op.c		\
+				ft_vec3_op2.c		\
 				ft_vec3_prod.c		\
 				ft_vec4.c			\
 				ft_vec4_op.c		\
+				ft_vec4_op2.c		\
 				ft_vec4_prod.c		\
 				ft_mat3x3.c			\
 				ft_mat3x3_op.c		\
