@@ -6,15 +6,20 @@
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:38:29 by mboivin           #+#    #+#             */
-/*   Updated: 2020/08/03 23:01:12 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/08/04 01:57:01 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minimath.h"
 
+double		quadnorm_vec2(t_vec2 v)
+{
+	return (dot_vec2(v, v));
+}
+
 double		len_vec2(t_vec2 v)
 {
-	return (sqrt((v.x * v.x) + (v.y * v.y)));
+	return (sqrt(quadnorm_vec2(v)));
 }
 
 t_vec2		normalize_vec2(t_vec2 v)
