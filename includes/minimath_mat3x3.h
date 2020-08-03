@@ -6,7 +6,7 @@
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:32:52 by mboivin           #+#    #+#             */
-/*   Updated: 2020/08/03 22:42:06 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/08/03 23:07:27 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,6 @@ void			free_mat3x3(t_mat3x3 *to_free);
 
 t_mat3x3		transpose_mat3x3(t_mat3x3 mat);
 t_vec3			mult_mat3x3_vec3(t_mat3x3 mat, t_vec3 v);
-t_mat3x3		schur_mat3x3_mat3x3(t_mat3x3 mat1, t_mat3x3 mat2);
+t_mat3x3		schur_mat3x3(t_mat3x3 mat1, t_mat3x3 mat2);
 
 #endif

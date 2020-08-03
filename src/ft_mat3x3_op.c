@@ -6,7 +6,7 @@
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:38:29 by mboivin           #+#    #+#             */
-/*   Updated: 2020/08/03 22:36:34 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/08/03 23:07:50 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ t_vec3			mult_mat3x3_vec3(t_mat3x3 mat, t_vec3 v)
 ** same dimensions and produces another matrix of the same dimension
 */
 
-t_mat3x3		schur_mat3x3_mat3x3(t_mat3x3 mat1, t_mat3x3 mat2)
+t_mat3x3		schur_mat3x3(t_mat3x3 mat1, t_mat3x3 mat2)
 {
 	t_mat3x3	result;
 
