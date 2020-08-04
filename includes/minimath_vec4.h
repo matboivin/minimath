@@ -6,7 +6,7 @@
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:32:52 by mboivin           #+#    #+#             */
-/*   Updated: 2020/08/04 02:03:04 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/08/04 21:52:04 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ t_vec4			sub_vec4(t_vec4 a, t_vec4 b);
 t_vec4			mult_vec4(t_vec4 a, t_vec4 b);
 t_vec4			div_vec4(t_vec4 a, t_vec4 b);
 t_vec4			scale_vec4(double scalar, t_vec4 v);
+
 double			quadnorm_vec4(t_vec4 v);
 double			norm_vec4(t_vec4 v);
 t_vec4			normalize_vec4(t_vec4 v);
