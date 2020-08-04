@@ -6,7 +6,7 @@
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:38:29 by mboivin           #+#    #+#             */
-/*   Updated: 2020/08/02 21:29:52 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/08/04 21:25:18 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,11 @@
 **  [ 8,  9, 10, 11],
 **  [12, 13, 14, 15]]
 **
-** create_mat4x4()  :  Constructor
-** malloc_mat4x4()  :  Malloc function
-** destroy_mat4x4() :  Destructor
-** free_mat4x4()    :  Free function
+** create_mat4x4()   :  Constructor
+** malloc_mat4x4()   :  Malloc function
+** destroy_mat4x4()  :  Destructor
+** free_mat4x4()     :  Free function
+** identity_mat4x4() :  Create an identity matrix
 */
 
 t_mat4x4		create_mat4x4(t_vec4 a, t_vec4 b, t_vec4 c, t_vec4 d)
@@ -60,4 +61,15 @@ void			free_mat4x4(t_mat4x4 *to_free)
 {
 	destroy_mat4x4(*to_free);
 	free(to_free);
+}
+
+t_mat4x4		identity_mat4x4(void)
+{
+	t_mat4x4	result;
+
+	result.c1 = create_vec4(1, 0, 0, 0);
+	result.c2 = create_vec4(0, 1, 0, 0);
+	result.c3 = create_vec4(0, 0, 1, 0);
+	result.c4 = create_vec4(0, 0, 0, 1);
+	return (result);
 }
