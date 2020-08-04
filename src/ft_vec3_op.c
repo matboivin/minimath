@@ -6,7 +6,7 @@
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:38:29 by mboivin           #+#    #+#             */
-/*   Updated: 2020/08/03 22:39:10 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/08/04 13:51:40 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,7 @@ t_vec3		add_vec3(t_vec3 a, t_vec3 b)
 
 t_vec3		sub_vec3(t_vec3 a, t_vec3 b)
 {
-	t_vec3	result;
-
-	result = add_vec3(a, scale_vec3(-1, b));
-	return (result);
+	return (add_vec3(a, scale_vec3(-1, b)));
 }
 
 t_vec3		mult_vec3(t_vec3 a, t_vec3 b)
