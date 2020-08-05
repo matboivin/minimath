@@ -6,7 +6,7 @@
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:38:29 by mboivin           #+#    #+#             */
-/*   Updated: 2020/08/04 13:50:35 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/08/05 18:39:01 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,5 +79,27 @@ t_mat4x4		schur_mat4x4(t_mat4x4 mat1, t_mat4x4 mat2)
 	result.c2 = mult_mat4x4_vec4(mat1, mat2.c2);
 	result.c3 = mult_mat4x4_vec4(mat1, mat2.c3);
 	result.c4 = mult_mat4x4_vec4(mat1, mat2.c4);
+	return (result);
+}
+
+/*
+** [[x1, y1, z1, t1],     [ux]
+**  [x2, y2, z2, t2],     [uy]
+**  [x3, y3, z3, t3],  *  [uz]
+**  [ 0,  0,  0,  1]]     [ 1]
+*/
+
+t_vec4			mult_mat4x4_vec3(t_mat4x4 mat, t_vec3 v)
+{
+	t_mat4x4	tmp_mat;
+	t_vec4		tmp_vec;
+	t_vec4		result;
+
+	tmp_vec = create_vec4(v.x, v.y, v.z, 1);
+	tmp_mat = transpose_mat4x4(mat);
+	result.x = dot_vec4(tmp_mat.c1, tmp_vec);
+	result.y = dot_vec4(tmp_mat.c2, tmp_vec);
+	result.z = dot_vec4(tmp_mat.c3, tmp_vec);
+	result.w = dot_vec4(tmp_mat.c4, tmp_vec);
 	return (result);
 }
