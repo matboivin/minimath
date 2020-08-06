@@ -6,7 +6,7 @@
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:38:29 by mboivin           #+#    #+#             */
-/*   Updated: 2020/08/04 21:25:18 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/08/06 14:26:44 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,9 +67,9 @@ t_mat4x4		identity_mat4x4(void)
 {
 	t_mat4x4	result;
 
-	result.c1 = create_vec4(1, 0, 0, 0);
-	result.c2 = create_vec4(0, 1, 0, 0);
-	result.c3 = create_vec4(0, 0, 1, 0);
-	result.c4 = create_vec4(0, 0, 0, 1);
+	result.c1 = create_vec4(1.0, 0.0, 0.0, 0.0);
+	result.c2 = create_vec4(0.0, 1.0, 0.0, 0.0);
+	result.c3 = create_vec4(0.0, 0.0, 1.0, 0.0);
+	result.c4 = create_vec4(0.0, 0.0, 0.0, 1.0);
 	return (result);
 }
