@@ -6,11 +6,15 @@
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:38:29 by mboivin           #+#    #+#             */
-/*   Updated: 2020/08/04 13:52:08 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/08/06 14:14:06 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minimath.h"
+
+/*
+** This function adds two 4D vectors
+*/
 
 t_vec4		add_vec4(t_vec4 a, t_vec4 b)
 {
@@ -23,10 +27,18 @@ t_vec4		add_vec4(t_vec4 a, t_vec4 b)
 	return (result);
 }
 
+/*
+** This function subtracts two 4D vectors
+*/
+
 t_vec4		sub_vec4(t_vec4 a, t_vec4 b)
 {
 	return (add_vec4(a, scale_vec4(-1, b)));
 }
+
+/*
+** This function multiplies two 4D vectors
+*/
 
 t_vec4		mult_vec4(t_vec4 a, t_vec4 b)
 {
@@ -39,6 +51,10 @@ t_vec4		mult_vec4(t_vec4 a, t_vec4 b)
 	return (result);
 }
 
+/*
+** This function divides two 4D vectors
+*/
+
 t_vec4		div_vec4(t_vec4 a, t_vec4 b)
 {
 	t_vec4	result;
@@ -49,6 +65,10 @@ t_vec4		div_vec4(t_vec4 a, t_vec4 b)
 	result.w = a.w / b.w;
 	return (result);
 }
+
+/*
+** This function scales a 4D vector
+*/
 
 t_vec4		scale_vec4(double scalar, t_vec4 v)
 {

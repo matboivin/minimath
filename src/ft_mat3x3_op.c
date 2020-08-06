@@ -6,14 +6,14 @@
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:38:29 by mboivin           #+#    #+#             */
-/*   Updated: 2020/08/04 13:50:02 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/08/06 14:22:47 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minimath.h"
 
 /*
-** Transpose 3x3 Matrix
+** This function transposes a 3x3 matrix
 **
 ** [[0, 1, 2],  [[0, 3, 6],
 **  [3, 4, 5],   [1, 4, 7],
@@ -37,17 +37,13 @@ t_mat3x3		transpose_mat3x3(t_mat3x3 mat)
 }
 
 /*
-** 3x3 Matrix
-**
-** [[0, 1, 2],
-**  [3, 4, 5],
-**  [6, 7, 8]]
+**  This function multiplies a 3x3 matrix and a 3D vector producing a 3D vector
 */
 
 t_vec3			mult_mat3x3_vec3(t_mat3x3 mat, t_vec3 v)
 {
-	t_mat3x3	tmp_mat;
 	t_vec3		result;
+	t_mat3x3	tmp_mat;
 
 	tmp_mat = transpose_mat3x3(mat);
 	result.x = dot_vec3(tmp_mat.c1, v);
@@ -57,11 +53,10 @@ t_vec3			mult_mat3x3_vec3(t_mat3x3 mat, t_vec3 v)
 }
 
 /*
-** Hadamard product or Schur product: Operation that takes two matrices of
-** same dimensions and produces another matrix of the same dimension
+**  This function multiplies two 3x3 matrices producing a 3x3 matrix
 */
 
-t_mat3x3		schur_mat3x3(t_mat3x3 mat1, t_mat3x3 mat2)
+t_mat3x3		mult_mat3x3_mat3x3(t_mat3x3 mat1, t_mat3x3 mat2)
 {
 	t_mat3x3	result;
 

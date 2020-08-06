@@ -6,14 +6,14 @@
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:38:29 by mboivin           #+#    #+#             */
-/*   Updated: 2020/08/05 18:39:01 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/08/06 14:21:53 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minimath.h"
 
 /*
-** Transpose 4x4 Matrix
+** This function transposes a 4x4 matrix
 **
 ** [[ 0,  1,  2,  3],  [[ 0,  4,  8, 12],
 **  [ 4,  5,  6,  7],   [ 1,  5,  9, 13],
@@ -45,18 +45,13 @@ t_mat4x4		transpose_mat4x4(t_mat4x4 mat)
 }
 
 /*
-** 4x4 Matrix
-**
-** [[ 0,  1,  2,  3],
-**  [ 4,  5,  6,  7],
-**  [ 8,  9, 10, 11],
-**  [12, 13, 14, 15]]
+**  This function multiplies a 4x4 matrix and a 4D vector producing a 4D vector
 */
 
 t_vec4			mult_mat4x4_vec4(t_mat4x4 mat, t_vec4 v)
 {
-	t_mat4x4	tmp_mat;
 	t_vec4		result;
+	t_mat4x4	tmp_mat;
 
 	tmp_mat = transpose_mat4x4(mat);
 	result.x = dot_vec4(tmp_mat.c1, v);
@@ -67,11 +62,10 @@ t_vec4			mult_mat4x4_vec4(t_mat4x4 mat, t_vec4 v)
 }
 
 /*
-** Hadamard product or Schur product: Operation that takes two matrices of
-** same dimensions and produces another matrix of the same dimension
+**  This function multiplies two 4x4 matrices producing a 4x4 matrix
 */
 
-t_mat4x4		schur_mat4x4(t_mat4x4 mat1, t_mat4x4 mat2)
+t_mat4x4		mult_mat4x4_mat4x4(t_mat4x4 mat1, t_mat4x4 mat2)
 {
 	t_mat4x4	result;
 
@@ -79,27 +73,5 @@ t_mat4x4		schur_mat4x4(t_mat4x4 mat1, t_mat4x4 mat2)
 	result.c2 = mult_mat4x4_vec4(mat1, mat2.c2);
 	result.c3 = mult_mat4x4_vec4(mat1, mat2.c3);
 	result.c4 = mult_mat4x4_vec4(mat1, mat2.c4);
-	return (result);
-}
-
-/*
-** [[x1, y1, z1, t1],     [ux]
-**  [x2, y2, z2, t2],     [uy]
-**  [x3, y3, z3, t3],  *  [uz]
-**  [ 0,  0,  0,  1]]     [ 1]
-*/
-
-t_vec4			mult_mat4x4_vec3(t_mat4x4 mat, t_vec3 v)
-{
-	t_mat4x4	tmp_mat;
-	t_vec4		tmp_vec;
-	t_vec4		result;
-
-	tmp_vec = create_vec4(v.x, v.y, v.z, 1);
-	tmp_mat = transpose_mat4x4(mat);
-	result.x = dot_vec4(tmp_mat.c1, tmp_vec);
-	result.y = dot_vec4(tmp_mat.c2, tmp_vec);
-	result.z = dot_vec4(tmp_mat.c3, tmp_vec);
-	result.w = dot_vec4(tmp_mat.c4, tmp_vec);
 	return (result);
 }

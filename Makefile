@@ -34,6 +34,7 @@ SRC		=		ft_vec2.c			\
 				ft_mat3x3_op.c		\
 				ft_mat4x4.c			\
 				ft_mat4x4_op.c		\
+				ft_mat_vec_op.c	\
 
 OBJ = $(addprefix $(OBJ_PATH)/, $(SRC:%.c=%.o))
 

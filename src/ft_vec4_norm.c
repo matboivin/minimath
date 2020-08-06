@@ -6,14 +6,14 @@
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:38:29 by mboivin           #+#    #+#             */
-/*   Updated: 2020/08/04 02:27:54 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/08/06 14:19:32 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minimath.h"
 
 /*
-** Dot Product of a vector with itself
+** This function computes the dot product of a 4D vector with itself
 */
 
 double		quadnorm_vec4(t_vec4 v)
@@ -22,7 +22,7 @@ double		quadnorm_vec4(t_vec4 v)
 }
 
 /*
-** Norm: Length of a vector
+** This function computes the norm (length) of a 3D vector
 */
 
 double		norm_vec4(t_vec4 v)
@@ -31,7 +31,7 @@ double		norm_vec4(t_vec4 v)
 }
 
 /*
-** Normalized vector: A vector of length 1
+** This function computes a normalized 3D vector (vector of length 1)
 */
 
 t_vec4		normalize_vec4(t_vec4 v)
