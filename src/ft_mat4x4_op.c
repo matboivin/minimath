@@ -6,7 +6,7 @@
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:38:29 by mboivin           #+#    #+#             */
-/*   Updated: 2020/08/06 14:21:53 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/08/06 16:21:01 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,37 @@ t_mat4x4		transpose_mat4x4(t_mat4x4 mat)
 	result.c4.y = mat.c2.w;
 	result.c4.z = mat.c3.w;
 	result.c4.w = mat.c4.w;
+	return (result);
+}
+
+/*
+** This function inverts a 4x4 matrix
+**
+** [[Rx, Ry, Rz, T],
+**  [Ux, Uy, Uz, T],
+**  [Fx, Fy, Fz, T],
+**  [ 0,  0,  0, 1]]
+*/
+
+t_mat4x4		invert_mat4x4(t_mat4x4 mat)
+{
+	t_mat4x4	result;
+	t_vec3		v_x;
+	t_vec3		v_y;
+	t_vec3		v_z;
+	t_vec3		v_trans;
+
+	v_x = create_vec3(mat.c1.x, mat.c2.x, mat.c3.x);
+	v_x = scale_vec3((1 / norm_vec3(v_x) * norm_vec3(v_x)), v_x);
+	v_y = create_vec3(mat.c1.y, mat.c2.y, mat.c3.y);
+	v_y = scale_vec3((1 / norm_vec3(v_y) * norm_vec3(v_y)), v_y);
+	v_z = create_vec3(mat.c1.z, mat.c2.z, mat.c3.z);
+	v_z = scale_vec3((1 / norm_vec3(v_z) * norm_vec3(v_z)), v_z);
+	v_trans = scale_vec3(-1, create_vec3(mat.c1.w, mat.c2.w, mat.c3.w));
+	result.c1 = create_vec4(v_x.x, v_x.y, v_x.z, dot_vec3(v_trans, v_x));
+	result.c2 = create_vec4(v_y.x, v_y.y, v_y.z, dot_vec3(v_trans, v_y));
+	result.c3 = create_vec4(v_z.x, v_z.y, v_z.z, dot_vec3(v_trans, v_z));
+	result.c4 = create_vec4(0.0, 0.0, 0.0, 1.0);
 	return (result);
 }
 

@@ -6,7 +6,7 @@
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:32:52 by mboivin           #+#    #+#             */
-/*   Updated: 2020/08/06 14:06:04 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/08/06 14:28:58 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void			free_mat4x4(t_mat4x4 *to_free);
 
 t_mat4x4		identity_mat4x4(void);
 t_mat4x4		transpose_mat4x4(t_mat4x4 mat);
+t_mat4x4		invert_mat4x4(t_mat4x4 mat);
 t_vec4			mult_mat4x4_vec4(t_mat4x4 mat, t_vec4 v);
 t_mat4x4		mult_mat4x4_mat4x4(t_mat4x4 mat1, t_mat4x4 mat2);
 
