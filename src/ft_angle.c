@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minimath.h                                         :+:      :+:    :+:   */
+/*   ft_angle.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/20 21:32:52 by mboivin           #+#    #+#             */
-/*   Updated: 2020/08/11 21:16:27 by mboivin          ###   ########.fr       */
+/*   Created: 2020/08/04 23:36:36 by mboivin           #+#    #+#             */
+/*   Updated: 2020/08/11 21:17:22 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINIMATH_H
-# define MINIMATH_H
+#include "minimath.h"
 
-# include <math.h>
-# include <stdlib.h>
+/*
+** This function converts an angle in degrees to radians
+*/
 
-# include "minimath_op.h"
-# include "minimath_vec2.h"
-# include "minimath_vec3.h"
-# include "minimath_vec4.h"
-# include "minimath_mat3x3.h"
-# include "minimath_mat4x4.h"
-# include "minimath_mat_vec.h"
+double	degrees_to_radians(double deg_angle)
+{
+	return ((deg_angle * M_PI) / 180.0);
+}
 
-#endif
+/*
+** This function converts an angle in radians to degrees
+*/
+
+double	radians_to_degrees(double rad_angle)
+{
+	return ((rad_angle * 180.0) / M_PI);
+}

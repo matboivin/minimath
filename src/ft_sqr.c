@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minimath.h                                         :+:      :+:    :+:   */
+/*   ft_sqr.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/20 21:32:52 by mboivin           #+#    #+#             */
-/*   Updated: 2020/08/11 21:16:27 by mboivin          ###   ########.fr       */
+/*   Created: 2020/08/11 21:14:49 by mboivin           #+#    #+#             */
+/*   Updated: 2020/08/11 21:18:39 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINIMATH_H
-# define MINIMATH_H
+#include "minimath.h"
 
-# include <math.h>
-# include <stdlib.h>
+/*
+** This function calculates the square of x
+*/
 
-# include "minimath_op.h"
-# include "minimath_vec2.h"
-# include "minimath_vec3.h"
-# include "minimath_vec4.h"
-# include "minimath_mat3x3.h"
-# include "minimath_mat4x4.h"
-# include "minimath_mat_vec.h"
-
-#endif
+double	ft_sqr(double x)
+{
+	return (x * x);
+}
