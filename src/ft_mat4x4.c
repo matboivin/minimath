@@ -6,19 +6,21 @@
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:38:29 by mboivin           #+#    #+#             */
-/*   Updated: 2020/08/06 14:26:44 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/08/11 22:46:14 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minimath.h"
 
 /*
-** 4x4 Matrix
+** 4x4 Matrix (Column Major)
 **
-** [[ 0,  1,  2,  3],
-**  [ 4,  5,  6,  7],
-**  [ 8,  9, 10, 11],
-**  [12, 13, 14, 15]]
+**    c1  c2  c3  c4
+**
+** x [ 0,  4,  8, 12]
+** y [ 1,  5,  9, 13]
+** z [ 2,  6, 10, 14]
+** w [ 3,  7, 11, 15]
 **
 ** create_mat4x4()   :  Constructor
 ** malloc_mat4x4()   :  Malloc function

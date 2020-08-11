@@ -6,7 +6,7 @@
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:38:29 by mboivin           #+#    #+#             */
-/*   Updated: 2020/08/11 21:22:39 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/08/11 22:54:32 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,12 @@
 /*
 ** This function transposes a 4x4 matrix
 **
-** [[ 0,  1,  2,  3],  [[ 0,  4,  8, 12],
-**  [ 4,  5,  6,  7],   [ 1,  5,  9, 13],
-**  [ 8,  9, 10, 11],   [ 2,  6, 10, 14],
-**  [12, 13, 14, 15]]   [ 3,  7, 11, 15]]
+**    c1  c2  c3  c4    c1  c2  c3  c4
+**
+** x [ 0,  4,  8, 12]  [ 0,  1,  2,  3]
+** y [ 1,  5,  9, 13]  [ 4,  5,  6,  7]
+** z [ 2,  6, 10, 14]  [ 8,  9, 10, 11]
+** w [ 3,  7, 11, 15]  [12, 13, 14, 15]
 */
 
 t_mat4x4		transpose_mat4x4(t_mat4x4 mat)
@@ -47,10 +49,10 @@ t_mat4x4		transpose_mat4x4(t_mat4x4 mat)
 /*
 ** This function inverts a 4x4 matrix
 **
-** [[Rx, Ry, Rz, T],
-**  [Ux, Uy, Uz, T],
-**  [Fx, Fy, Fz, T],
-**  [ 0,  0,  0, 1]]
+** [Rx, Ux, Fx, Tx]
+** [Ry, Uy, Fy, Ty]
+** [Rz, Uz, Fz, Tz]
+** [0., 0., 0., 1.]
 */
 
 t_mat4x4		invert_mat4x4(t_mat4x4 mat)
@@ -67,11 +69,15 @@ t_mat4x4		invert_mat4x4(t_mat4x4 mat)
 	v_y = scale_vec3((1 / ft_sqr(norm_vec3(v_y))), v_y);
 	v_z = create_vec3(mat.c1.z, mat.c2.z, mat.c3.z);
 	v_z = scale_vec3((1 / ft_sqr(norm_vec3(v_z))), v_z);
-	v_trans = scale_vec3(-1, create_vec3(mat.c1.w, mat.c2.w, mat.c3.w));
-	result.c1 = create_vec4(v_x.x, v_x.y, v_x.z, dot_vec3(v_trans, v_x));
-	result.c2 = create_vec4(v_y.x, v_y.y, v_y.z, dot_vec3(v_trans, v_y));
-	result.c3 = create_vec4(v_z.x, v_z.y, v_z.z, dot_vec3(v_trans, v_z));
-	result.c4 = create_vec4(0.0, 0.0, 0.0, 1.0);
+	v_trans = scale_vec3(-1, create_vec3(mat.c4.x, mat.c4.y, mat.c4.z));
+	result.c1 = create_vec4(v_x.x, v_x.y, v_x.z, 0.0);
+	result.c2 = create_vec4(v_y.x, v_y.y, v_y.z, 0.0);
+	result.c3 = create_vec4(v_z.x, v_z.y, v_z.z, 0.0);
+	result.c4 = create_vec4(
+		dot_vec3(v_trans, v_x),
+		dot_vec3(v_trans, v_y),
+		dot_vec3(v_trans, v_z),
+		1.0);
 	return (result);
 }
 
