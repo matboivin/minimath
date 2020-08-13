@@ -6,7 +6,7 @@
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:38:29 by mboivin           #+#    #+#             */
-/*   Updated: 2020/07/27 22:23:27 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/08/13 22:42:29 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,11 @@ void		free_vec3(t_vec3 *to_free)
 {
 	destroy_vec3(*to_free);
 	free(to_free);
+}
+
+void		cpy_vec3(t_vec3 *dst, t_vec3 src)
+{
+	dst->x = src.x;
+	dst->y = src.y;
+	dst->z = src.z;
 }

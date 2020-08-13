@@ -6,7 +6,7 @@
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:32:52 by mboivin           #+#    #+#             */
-/*   Updated: 2020/08/04 21:52:04 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/08/13 22:43:42 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ t_vec4			create_vec4(double p_x, double p_y, double p_z, double p_w);
 t_vec4			*malloc_vec4(double p_x, double p_y, double p_z, double p_w);
 void			destroy_vec4(t_vec4 to_destroy);
 void			free_vec4(t_vec4 *to_free);
+void			cpy_vec4(t_vec4 *dst, t_vec4 src);
 
 t_vec4			add_vec4(t_vec4 a, t_vec4 b);
 t_vec4			sub_vec4(t_vec4 a, t_vec4 b);
