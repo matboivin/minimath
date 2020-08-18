@@ -2,8 +2,6 @@
 
 Mini linear algebra library for 42 School Graphics projects.
 
-:warning: Work In Progress: Don't use.
-
 ### Prerequisites
 
 GNU make and a C compiler.
@@ -19,3 +17,7 @@ To use the library:
 ```console
 $ gcc foo.c -L. -lminimath
 ```
+
+### Example usage
+
+[miniRT](https://github.com/matboivin/miniRT)

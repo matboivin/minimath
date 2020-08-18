@@ -6,7 +6,7 @@
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:38:29 by mboivin           #+#    #+#             */
-/*   Updated: 2020/08/11 22:54:32 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/08/18 16:02:48 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ t_mat4x4		invert_mat4x4(t_mat4x4 mat)
 }
 
 /*
-**  This function multiplies a 4x4 matrix and a 4D vector producing a 4D vector
+** This function multiplies a 4x4 matrix and a 4D vector producing a 4D vector
 */
 
 t_vec4			mult_mat4x4_vec4(t_mat4x4 mat, t_vec4 v)
@@ -99,7 +99,7 @@ t_vec4			mult_mat4x4_vec4(t_mat4x4 mat, t_vec4 v)
 }
 
 /*
-**  This function multiplies two 4x4 matrices producing a 4x4 matrix
+** This function multiplies two 4x4 matrices producing a 4x4 matrix
 */
 
 t_mat4x4		mult_mat4x4_mat4x4(t_mat4x4 mat1, t_mat4x4 mat2)
@@ -110,5 +110,20 @@ t_mat4x4		mult_mat4x4_mat4x4(t_mat4x4 mat1, t_mat4x4 mat2)
 	result.c2 = mult_mat4x4_vec4(mat1, mat2.c2);
 	result.c3 = mult_mat4x4_vec4(mat1, mat2.c3);
 	result.c4 = mult_mat4x4_vec4(mat1, mat2.c4);
+	return (result);
+}
+
+/*
+** This function scales a 4x4 matrix
+*/
+
+t_mat4x4		scale_mat4x4(double scalar, t_mat4x4 mat)
+{
+	t_mat4x4	result;
+
+	result.c1 = scale_vec4(scalar, mat.c1);
+	result.c2 = scale_vec4(scalar, mat.c2);
+	result.c3 = scale_vec4(scalar, mat.c3);
+	result.c4 = scale_vec4(scalar, mat.c4);
 	return (result);
 }

@@ -6,7 +6,7 @@
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:32:52 by mboivin           #+#    #+#             */
-/*   Updated: 2020/08/13 22:42:50 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/08/18 16:08:02 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,14 @@ t_vec3			create_vec3(double p_x, double p_y, double p_z);
 t_vec3			*malloc_vec3(double p_x, double p_y, double p_z);
 void			destroy_vec3(t_vec3 to_destroy);
 void			free_vec3(t_vec3 *to_free);
-void			cpy_vec3(t_vec3 *dst, t_vec3 src);
 
 t_vec3			add_vec3(t_vec3 a, t_vec3 b);
 t_vec3			sub_vec3(t_vec3 a, t_vec3 b);
 t_vec3			mult_vec3(t_vec3 a, t_vec3 b);
 t_vec3			div_vec3(t_vec3 a, t_vec3 b);
 t_vec3			scale_vec3(double scalar, t_vec3 v);
+void			cpy_vec3(t_vec3 *dst, t_vec3 src);
+bool			is_null_vec3(t_vec3 to_check);
 
 double			quadnorm_vec3(t_vec3 v);
 double			norm_vec3(t_vec3 v);

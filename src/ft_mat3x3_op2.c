@@ -1,53 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_vec2.c                                          :+:      :+:    :+:   */
+/*   ft_mat3x3_op2.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:38:29 by mboivin           #+#    #+#             */
-/*   Updated: 2020/08/18 15:54:05 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/08/18 16:11:52 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minimath.h"
 
 /*
-** 2D Vector
-**
-** create_vec2()  :  Constructor
-** malloc_vec2()  :  Malloc function
-** destroy_vec2() :  Destructor
-** free_vec2()    :  Free function
+** This function copies 3x3 matrix src to 3x3 matrix dst
 */
 
-t_vec2		create_vec2(double p_x, double p_y)
+void			cpy_mat3x3(t_mat3x3 *dst, t_mat3x3 src)
 {
-	t_vec2	result;
+	cpy_vec3(&(dst->c1), src.c1);
+	cpy_vec3(&(dst->c2), src.c2);
+	cpy_vec3(&(dst->c3), src.c3);
+}
 
-	result.x = p_x;
-	result.y = p_y;
+/*
+** This function creates a 3x3 identity matrix
+*/
+
+t_mat3x3		identity_mat3x3(void)
+{
+	t_mat3x3	result;
+
+	result.c1 = create_vec3(1.0, 0.0, 0.0);
+	result.c2 = create_vec3(0.0, 1.0, 0.0);
+	result.c3 = create_vec3(0.0, 0.0, 1.0);
 	return (result);
-}
-
-t_vec2		*malloc_vec2(double p_x, double p_y)
-{
-	t_vec2	*result;
-
-	result = (t_vec2 *)malloc(sizeof(t_vec2));
-	if (result == NULL)
-		return (NULL);
-	*result = create_vec2(p_x, p_y);
-	return (result);
-}
-
-void		destroy_vec2(t_vec2 to_destroy)
-{
-	(void)to_destroy;
-}
-
-void		free_vec2(t_vec2 *to_free)
-{
-	destroy_vec2(*to_free);
-	free(to_free);
 }

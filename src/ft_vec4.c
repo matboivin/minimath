@@ -6,7 +6,7 @@
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:38:29 by mboivin           #+#    #+#             */
-/*   Updated: 2020/08/13 22:49:03 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/08/18 15:55:33 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,12 +52,4 @@ void		free_vec4(t_vec4 *to_free)
 {
 	destroy_vec4(*to_free);
 	free(to_free);
-}
-
-void		cpy_vec4(t_vec4 *dst, t_vec4 src)
-{
-	dst->x = src.x;
-	dst->y = src.y;
-	dst->z = src.z;
-	dst->w = src.w;
 }

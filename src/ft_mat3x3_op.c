@@ -6,7 +6,7 @@
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:38:29 by mboivin           #+#    #+#             */
-/*   Updated: 2020/08/11 22:50:02 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/08/18 16:03:34 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ t_mat3x3		transpose_mat3x3(t_mat3x3 mat)
 }
 
 /*
-**  This function multiplies a 3x3 matrix and a 3D vector producing a 3D vector
+** This function multiplies a 3x3 matrix and a 3D vector producing a 3D vector
 */
 
 t_vec3			mult_mat3x3_vec3(t_mat3x3 mat, t_vec3 v)
@@ -55,7 +55,7 @@ t_vec3			mult_mat3x3_vec3(t_mat3x3 mat, t_vec3 v)
 }
 
 /*
-**  This function multiplies two 3x3 matrices producing a 3x3 matrix
+** This function multiplies two 3x3 matrices producing a 3x3 matrix
 */
 
 t_mat3x3		mult_mat3x3_mat3x3(t_mat3x3 mat1, t_mat3x3 mat2)
@@ -65,5 +65,19 @@ t_mat3x3		mult_mat3x3_mat3x3(t_mat3x3 mat1, t_mat3x3 mat2)
 	result.c1 = mult_mat3x3_vec3(mat1, mat2.c1);
 	result.c2 = mult_mat3x3_vec3(mat1, mat2.c2);
 	result.c3 = mult_mat3x3_vec3(mat1, mat2.c3);
+	return (result);
+}
+
+/*
+** This function scales a 3x3 matrix
+*/
+
+t_mat3x3		scale_mat3x3(double scalar, t_mat3x3 mat)
+{
+	t_mat3x3	result;
+
+	result.c1 = scale_vec3(scalar, mat.c1);
+	result.c2 = scale_vec3(scalar, mat.c2);
+	result.c3 = scale_vec3(scalar, mat.c3);
 	return (result);
 }

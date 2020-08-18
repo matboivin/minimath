@@ -6,7 +6,7 @@
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:38:29 by mboivin           #+#    #+#             */
-/*   Updated: 2020/08/11 22:47:36 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/08/18 15:56:16 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,14 +60,4 @@ void			free_mat3x3(t_mat3x3 *to_free)
 {
 	destroy_mat3x3(*to_free);
 	free(to_free);
-}
-
-t_mat3x3		identity_mat3x3(void)
-{
-	t_mat3x3	result;
-
-	result.c1 = create_vec3(1.0, 0.0, 0.0);
-	result.c2 = create_vec3(0.0, 1.0, 0.0);
-	result.c3 = create_vec3(0.0, 0.0, 1.0);
-	return (result);
 }
