@@ -50,14 +50,14 @@ all: $(NAME)
 
 $(NAME): $(OBJ_PATH) $(OBJ)
 	@$(AR) $(ARFLAGS) $@ $(OBJ)
-	@echo "[OK]\t\t$(NAME) is ready"
+	@echo "\nOK\t\t$(NAME) is ready"
 
 $(OBJ_PATH):
 	@mkdir -p $@
-	@echo "[OK]\t\tCreated $@ directory"
+	@echo "Created\t\t$@ directory"
 
 $(OBJ_PATH)/%.o : %.c
-	@echo "[Compiling]\t$< -> $@ ..."
+	@echo "\r\033[KCompiling\t$< \c"
 	@$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@
 
 .PHONY: debug
@@ -67,12 +67,12 @@ debug: re
 .PHONY: clean
 clean:
 	@$(RM) $(OBJ_PATH)
-	@echo "[OK]\t\tCleaned object files"
+	@echo "Cleaned\t\tobject files"
 
 .PHONY: fclean
 fclean: clean
 	@$(RM) $(NAME)
-	@echo "[OK]\t\tRemoved $(NAME)"
+	@echo "Removed\t\t$(NAME)"
 
 .PHONY: re
 re: fclean all
