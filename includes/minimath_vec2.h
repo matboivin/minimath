@@ -6,7 +6,7 @@
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:32:52 by mboivin           #+#    #+#             */
-/*   Updated: 2020/08/18 16:08:54 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/08/30 23:40:07 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,9 @@ t_vec2			div_vec2(t_vec2 a, t_vec2 b);
 t_vec2			scale_vec2(double scalar, t_vec2 v);
 void			cpy_vec2(t_vec2 *dst, t_vec2 src);
 bool			is_null_vec2(t_vec2 to_check);
-
 double			quadnorm_vec2(t_vec2 v);
 double			norm_vec2(t_vec2 v);
 t_vec2			normalize_vec2(t_vec2 v);
-
 double			dot_vec2(t_vec2 a, t_vec2 b);
 
 #endif
