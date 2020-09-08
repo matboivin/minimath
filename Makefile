@@ -18,6 +18,17 @@ OBJ_PATH = obj
 
 vpath %.c $(foreach dir, $(SRC_PATH), $(dir):)
 
+INC_FILES	=	minimath.h			\
+				minimath_mat3x3.h	\
+				minimath_mat4x4.h	\
+				minimath_mat_vec.h	\
+				minimath_op.h		\
+				minimath_vec2.h		\
+				minimath_vec3.h		\
+				minimath_vec4.h		\
+
+INC			=	$(addprefix includes/, $(INC_FILES))
+
 SRC		=		ft_vec2.c			\
 				ft_vec2_op.c		\
 				ft_vec2_op2.c		\
@@ -48,7 +59,7 @@ OBJ = $(addprefix $(OBJ_PATH)/, $(SRC:%.c=%.o))
 .PHONY: all
 all: $(NAME)
 
-$(NAME): $(OBJ_PATH) $(OBJ)
+$(NAME): $(OBJ_PATH) $(OBJ) $(INC)
 	@$(AR) $(ARFLAGS) $@ $(OBJ)
 	@echo "\nOK\t\t$(NAME) is ready"
 
