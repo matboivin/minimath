@@ -1,54 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_vec3.c                                          :+:      :+:    :+:   */
+/*   vec2.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:38:29 by mboivin           #+#    #+#             */
-/*   Updated: 2020/08/18 15:54:47 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/09/30 12:56:05 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minimath.h"
 
 /*
-** 3D Vector
+** 2D Vector
 **
-** create_vec3()  :  Constructor
-** malloc_vec3()  :  Malloc function
-** destroy_vec3() :  Destructor
-** free_vec3()    :  Free function
+** create_vec2()  :  Constructor
+** malloc_vec2()  :  Malloc function
+** destroy_vec2() :  Destructor
+** free_vec2()    :  Free function
 */
 
-t_vec3		create_vec3(double p_x, double p_y, double p_z)
+t_vec2		create_vec2(double p_x, double p_y)
 {
-	t_vec3	result;
+	t_vec2	result;
 
 	result.x = p_x;
 	result.y = p_y;
-	result.z = p_z;
 	return (result);
 }
 
-t_vec3		*malloc_vec3(double p_x, double p_y, double p_z)
+t_vec2		*malloc_vec2(double p_x, double p_y)
 {
-	t_vec3	*result;
+	t_vec2	*result;
 
-	result = (t_vec3 *)malloc(sizeof(t_vec3));
+	result = (t_vec2 *)malloc(sizeof(t_vec2));
 	if (result == NULL)
 		return (NULL);
-	*result = create_vec3(p_x, p_y, p_z);
+	*result = create_vec2(p_x, p_y);
 	return (result);
 }
 
-void		destroy_vec3(t_vec3 to_destroy)
+void		destroy_vec2(t_vec2 to_destroy)
 {
 	(void)to_destroy;
 }
 
-void		free_vec3(t_vec3 *to_free)
+void		free_vec2(t_vec2 *to_free)
 {
-	destroy_vec3(*to_free);
+	destroy_vec2(*to_free);
 	free(to_free);
 }

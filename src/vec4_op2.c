@@ -1,22 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_vec2_prod.c                                     :+:      :+:    :+:   */
+/*   vec4_op2.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:38:29 by mboivin           #+#    #+#             */
-/*   Updated: 2020/08/06 14:16:46 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/09/30 12:55:09 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minimath.h"
 
 /*
-** This function computes the dot product of two 2D vectors
+** This function copies 4D vector src to 4D vector dst
 */
 
-double		dot_vec2(t_vec2 a, t_vec2 b)
+void		cpy_vec4(t_vec4 *dst, t_vec4 src)
 {
-	return ((a.x * b.x) + (a.y * b.y));
+	dst->x = src.x;
+	dst->y = src.y;
+	dst->z = src.z;
+	dst->w = src.w;
+}
+
+/*
+** This function returns true if 4D vector to_check is null
+*/
+
+bool		is_null_vec4(t_vec4 to_check)
+{
+	if (norm_vec4(to_check) == 0.0)
+		return (true);
+	return (false);
 }

@@ -1,44 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_vec3_op2.c                                      :+:      :+:    :+:   */
+/*   vec3_norm.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:38:29 by mboivin           #+#    #+#             */
-/*   Updated: 2020/08/30 23:42:08 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/09/30 12:55:58 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minimath.h"
 
 /*
-** This function copies 3D vector src to 3D vector dst
+** This function computes the dot product of a 3D vector with itself
 */
 
-void		cpy_vec3(t_vec3 *dst, t_vec3 src)
+double		quadnorm_vec3(t_vec3 v)
 {
-	dst->x = src.x;
-	dst->y = src.y;
-	dst->z = src.z;
+	return (dot_vec3(v, v));
 }
 
 /*
-** This function returns true if 3D vector to_check is null
+** This function computes the norm (length) of a 3D vector
 */
 
-bool		is_null_vec3(t_vec3 to_check)
+double		norm_vec3(t_vec3 v)
 {
-	if (norm_vec3(to_check) == 0.0)
-		return (true);
-	return (false);
+	return (sqrt(quadnorm_vec3(v)));
 }
 
 /*
-** This function computes the cosine of the angle between two 3D vectors
+** This function computes a normalized 3D vector (vector of length 1)
 */
 
-double		cos_vec3(t_vec3 a, t_vec3 b)
+t_vec3		normalize_vec3(t_vec3 v)
 {
-	return (dot_vec3(a, b) / (norm_vec3(a) * norm_vec3(b)));
+	double	norm;
+
+	norm = norm_vec3(v);
+	if (norm > 0)
+		return (scale_vec3((1 / norm), v));
+	return (v);
 }

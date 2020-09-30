@@ -1,53 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_vec2.c                                          :+:      :+:    :+:   */
+/*   vec2_norm.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:38:29 by mboivin           #+#    #+#             */
-/*   Updated: 2020/08/18 15:54:05 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/09/30 12:56:31 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minimath.h"
 
 /*
-** 2D Vector
-**
-** create_vec2()  :  Constructor
-** malloc_vec2()  :  Malloc function
-** destroy_vec2() :  Destructor
-** free_vec2()    :  Free function
+** This function computes the dot product of a 2D vector with itself
 */
 
-t_vec2		create_vec2(double p_x, double p_y)
+double		quadnorm_vec2(t_vec2 v)
 {
-	t_vec2	result;
-
-	result.x = p_x;
-	result.y = p_y;
-	return (result);
+	return (dot_vec2(v, v));
 }
 
-t_vec2		*malloc_vec2(double p_x, double p_y)
-{
-	t_vec2	*result;
+/*
+** This function computes the norm (length) of a 2D vector
+*/
 
-	result = (t_vec2 *)malloc(sizeof(t_vec2));
-	if (result == NULL)
-		return (NULL);
-	*result = create_vec2(p_x, p_y);
-	return (result);
+double		norm_vec2(t_vec2 v)
+{
+	return (sqrt(quadnorm_vec2(v)));
 }
 
-void		destroy_vec2(t_vec2 to_destroy)
-{
-	(void)to_destroy;
-}
+/*
+** This function computes a normalized 2D vector (vector of length 1)
+*/
 
-void		free_vec2(t_vec2 *to_free)
+t_vec2		normalize_vec2(t_vec2 v)
 {
-	destroy_vec2(*to_free);
-	free(to_free);
+	double	norm;
+
+	norm = norm_vec2(v);
+	if (norm > 0)
+		return (scale_vec2((1 / norm), v));
+	return (v);
 }
