@@ -6,7 +6,7 @@
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:38:29 by mboivin           #+#    #+#             */
-/*   Updated: 2020/09/30 12:55:27 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/09/30 15:57:26 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ t_vec3		*malloc_vec3(double p_x, double p_y, double p_z)
 	t_vec3	*result;
 
 	result = (t_vec3 *)malloc(sizeof(t_vec3));
-	if (result == NULL)
+	if (!result)
 		return (NULL);
 	*result = create_vec3(p_x, p_y, p_z);
 	return (result);

@@ -19,6 +19,7 @@ OBJ_PATH = obj
 vpath %.c $(foreach dir, $(SRC_PATH), $(dir):)
 
 INC_FILES	=	minimath.h			\
+				minimath_define.h	\
 				minimath_mat3x3.h	\
 				minimath_mat4x4.h	\
 				minimath_mat_vec.h	\

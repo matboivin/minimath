@@ -6,7 +6,7 @@
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:38:29 by mboivin           #+#    #+#             */
-/*   Updated: 2020/09/30 12:57:17 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/09/30 15:56:25 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,11 +54,11 @@ t_mat3x3		invert_mat3x3(t_mat3x3 mat)
 	t_vec3		v_z;
 
 	v_x = create_vec3(mat.c1.x, mat.c2.x, mat.c3.x);
-	v_x = scale_vec3((1.0 / ft_sqr(norm_vec3(v_x))), v_x);
+	v_x = scale_vec3((UNIT_VALUE / ft_sqr(norm_vec3(v_x))), v_x);
 	v_y = create_vec3(mat.c1.y, mat.c2.y, mat.c3.y);
-	v_y = scale_vec3((1.0 / ft_sqr(norm_vec3(v_y))), v_y);
+	v_y = scale_vec3((UNIT_VALUE / ft_sqr(norm_vec3(v_y))), v_y);
 	v_z = create_vec3(mat.c1.z, mat.c2.z, mat.c3.z);
-	v_z = scale_vec3((1.0 / ft_sqr(norm_vec3(v_z))), v_z);
+	v_z = scale_vec3((UNIT_VALUE / ft_sqr(norm_vec3(v_z))), v_z);
 	result.c1 = create_vec3(v_x.x, v_x.y, v_x.z);
 	result.c2 = create_vec3(v_y.x, v_y.y, v_y.z);
 	result.c3 = create_vec3(v_z.x, v_z.y, v_z.z);

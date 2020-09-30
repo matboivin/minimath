@@ -6,7 +6,7 @@
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:38:29 by mboivin           #+#    #+#             */
-/*   Updated: 2020/09/30 12:57:23 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/09/30 15:56:08 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ t_vec4			mult_mat4x4_vec3(t_mat4x4 mat, t_vec3 v)
 	t_mat4x4	tmp_mat;
 	t_vec4		tmp_vec;
 
-	tmp_vec = create_vec4(v.x, v.y, v.z, 1.0);
+	tmp_vec = create_vec4(v.x, v.y, v.z, UNIT_VALUE);
 	tmp_mat = transpose_mat4x4(mat);
 	result.x = dot_vec4(tmp_mat.c1, tmp_vec);
 	result.y = dot_vec4(tmp_mat.c2, tmp_vec);

@@ -6,7 +6,7 @@
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:38:29 by mboivin           #+#    #+#             */
-/*   Updated: 2020/09/30 12:55:02 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/09/30 15:57:26 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ t_vec4		*malloc_vec4(double p_x, double p_y, double p_z, double p_w)
 	t_vec4	*result;
 
 	result = (t_vec4 *)malloc(sizeof(t_vec4));
-	if (result == NULL)
+	if (!result)
 		return (NULL);
 	*result = create_vec4(p_x, p_y, p_z, p_w);
 	return (result);

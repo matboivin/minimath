@@ -6,7 +6,7 @@
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:38:29 by mboivin           #+#    #+#             */
-/*   Updated: 2020/09/30 12:56:31 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/09/30 16:02:04 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ t_vec2		normalize_vec2(t_vec2 v)
 	double	norm;
 
 	norm = norm_vec2(v);
-	if (norm > 0)
-		return (scale_vec2((1 / norm), v));
+	if (norm > 0.0)
+		return (scale_vec2((UNIT_VALUE / norm), v));
 	return (v);
 }

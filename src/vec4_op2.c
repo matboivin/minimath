@@ -6,7 +6,7 @@
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:38:29 by mboivin           #+#    #+#             */
-/*   Updated: 2020/09/30 12:55:09 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/09/30 16:00:58 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,5 @@ void		cpy_vec4(t_vec4 *dst, t_vec4 src)
 
 bool		is_null_vec4(t_vec4 to_check)
 {
-	if (norm_vec4(to_check) == 0.0)
-		return (true);
-	return (false);
+	return (norm_vec4(to_check) == DEFAULT_VALUE);
 }

@@ -1,32 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vec2_op2.c                                         :+:      :+:    :+:   */
+/*   minimath_define.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/20 21:38:29 by mboivin           #+#    #+#             */
-/*   Updated: 2020/09/30 15:59:06 by mboivin          ###   ########.fr       */
+/*   Created: 2020/07/20 21:32:52 by mboivin           #+#    #+#             */
+/*   Updated: 2020/09/30 15:54:55 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minimath.h"
+#ifndef MINIMATH_DEFINE_H
+# define MINIMATH_DEFINE_H
 
-/*
-** This function copies 2D vector src to 2D vector dst
-*/
+# define DEFAULT_VALUE 0.0
+# define UNIT_VALUE 1.0
+# define REVUNIT_VALUE -1.0
+# define STRAIGHT_ANGLE 180.0
 
-void		cpy_vec2(t_vec2 *dst, t_vec2 src)
-{
-	dst->x = src.x;
-	dst->y = src.y;
-}
-
-/*
-** This function returns true if 2D vector to_check is null
-*/
-
-bool		is_null_vec2(t_vec2 to_check)
-{
-	return (norm_vec2(to_check) == DEFAULT_VALUE);
-}
+#endif

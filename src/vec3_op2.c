@@ -6,7 +6,7 @@
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:38:29 by mboivin           #+#    #+#             */
-/*   Updated: 2020/09/30 12:55:42 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/09/30 16:00:00 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,7 @@ void		cpy_vec3(t_vec3 *dst, t_vec3 src)
 
 bool		is_null_vec3(t_vec3 to_check)
 {
-	if (norm_vec3(to_check) == 0.0)
-		return (true);
-	return (false);
+	return (norm_vec3(to_check) == DEFAULT_VALUE);
 }
 
 /*
