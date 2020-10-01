@@ -1,22 +1,32 @@
-NAME = libminimath.a
+NAME := libminimath.a
 
 SHELL = /bin/sh
-CC = gcc
 RM = rm -rf
+
+.SUFFIXE:
+.SUFFIXES: .c .o .h
+
+# ******************************** CC AND FLAGS ****************************** #
+
+CC = gcc
 AR = ar
 ARFLAGS = -rcs
 CFLAGS = -Wall -Wextra -Werror
 IFLAGS = -I$(INC_PATH)
 LFLAGS = -lm
 
-.SUFFIXE:
-.SUFFIXES: .c .o .h
+# ******************************** DIR AND PATHS ***************************** #
 
-INC_PATH = $(shell find includes -type d)
-SRC_PATH = $(shell find src -type d)
-OBJ_PATH = obj
+INC_PATH	=	$(shell find includes -type d)
+SRC_PATH	=	$(shell find src -type d)
+OBJ_PATH	=	obj
+
+INC			=	$(addprefix includes/, $(INC_FILES))
+OBJ			=	$(addprefix $(OBJ_PATH)/, $(SRC:%.c=%.o))
 
 vpath %.c $(foreach dir, $(SRC_PATH), $(dir):)
+
+# ********************************** FILES *********************************** #
 
 INC_FILES	=	minimath.h			\
 				minimath_define.h	\
@@ -26,9 +36,7 @@ INC_FILES	=	minimath.h			\
 				minimath_op.h		\
 				minimath_vec2.h		\
 				minimath_vec3.h		\
-				minimath_vec4.h		\
-
-INC			=	$(addprefix includes/, $(INC_FILES))
+				minimath_vec4.h
 
 SRC		=		vec2.c			\
 				vec2_op.c		\
@@ -53,9 +61,9 @@ SRC		=		vec2.c			\
 				mat4x4_op2.c	\
 				mat_vec_op.c	\
 				ft_angle.c		\
-				ft_sqr.c		\
+				ft_sqr.c
 
-OBJ = $(addprefix $(OBJ_PATH)/, $(SRC:%.c=%.o))
+# ********************************** RULES *********************************** #
 
 .PHONY: all
 all: $(NAME)
@@ -64,17 +72,25 @@ $(NAME): $(OBJ_PATH) $(OBJ) $(INC)
 	@$(AR) $(ARFLAGS) $@ $(OBJ)
 	@echo "\nOK\t\t$(NAME) is ready"
 
+# OBJ DIR #
+
 $(OBJ_PATH):
 	@mkdir -p $@
 	@echo "Created\t\t$@ directory"
+
+# COMPILING #
 
 $(OBJ_PATH)/%.o : %.c
 	@echo "\r\033[KCompiling\t$< \c"
 	@$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@
 
+# DEBUG #
+
 .PHONY: debug
 debug: CFLAGS+=-g3
 debug: re
+
+# CLEAN #
 
 .PHONY: clean
 clean:
