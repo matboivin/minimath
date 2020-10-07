@@ -1,7 +1,7 @@
 NAME := libminimath.a
 
 SHELL = /bin/sh
-RM = rm -rf
+RM = /bin/rm
 
 .SUFFIXE:
 .SUFFIXES: .c .o .h
@@ -12,19 +12,19 @@ CC = gcc
 AR = ar
 ARFLAGS = -rcs
 CFLAGS = -Wall -Wextra -Werror
-IFLAGS = -I$(INC_PATH)
+IFLAGS = -I$(INC_DIR)
 LFLAGS = -lm
 
-# ******************************** DIR AND PATHS ***************************** #
+# ******************************* DIRS AND PATHS ***************************** #
 
-INC_PATH	=	includes
-SRC_PATH	=	src
-OBJ_PATH	=	obj
+INC_DIR		=	includes
+SRC_DIR		=	src
+OBJ_DIR		=	obj
 
-INC			=	$(addprefix $(INC_PATH)/, $(INC_FILES))
-OBJ			=	$(addprefix $(OBJ_PATH)/, $(SRC:%.c=%.o))
+INC			=	$(addprefix $(INC_DIR)/, $(INC_FILES))
+OBJ			=	$(addprefix $(OBJ_DIR)/, $(SRC:%.c=%.o))
 
-vpath %.c $(foreach dir, $(SRC_PATH), $(dir):)
+VPATH		=	$(SRC_DIR)
 
 # ********************************** FILES *********************************** #
 
@@ -68,19 +68,19 @@ SRC		=		vec2.c			\
 .PHONY: all
 all: $(NAME)
 
-$(NAME): $(OBJ_PATH) $(OBJ) $(INC)
+$(NAME): $(OBJ_DIR) $(OBJ) $(INC)
 	@$(AR) $(ARFLAGS) $@ $(OBJ)
 	@echo "\nOK\t\t$(NAME) is ready"
 
 # OBJ DIR #
 
-$(OBJ_PATH):
+$(OBJ_DIR):
 	@mkdir -p $@
 	@echo "Created\t\t$@ directory"
 
 # COMPILING #
 
-$(OBJ_PATH)/%.o : %.c
+$(OBJ_DIR)/%.o : %.c
 	@echo "\r\033[KCompiling\t$< \c"
 	@$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@
 
@@ -94,12 +94,12 @@ debug: re
 
 .PHONY: clean
 clean:
-	@$(RM) $(OBJ_PATH)
+	@$(RM) -rf $(OBJ_DIR)
 	@echo "Cleaned\t\tobject files"
 
 .PHONY: fclean
 fclean: clean
-	@$(RM) $(NAME)
+	@$(RM) -rf $(NAME)
 	@echo "Removed\t\t$(NAME)"
 
 .PHONY: re
