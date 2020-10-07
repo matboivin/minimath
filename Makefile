@@ -17,11 +17,11 @@ LFLAGS = -lm
 
 # ******************************** DIR AND PATHS ***************************** #
 
-INC_PATH	=	$(shell find includes -type d)
-SRC_PATH	=	$(shell find src -type d)
+INC_PATH	=	includes
+SRC_PATH	=	src
 OBJ_PATH	=	obj
 
-INC			=	$(addprefix includes/, $(INC_FILES))
+INC			=	$(addprefix $(INC_PATH)/, $(INC_FILES))
 OBJ			=	$(addprefix $(OBJ_PATH)/, $(SRC:%.c=%.o))
 
 vpath %.c $(foreach dir, $(SRC_PATH), $(dir):)
