@@ -3,7 +3,7 @@ NAME := libminimath.a
 SHELL = /bin/sh
 RM = /bin/rm
 
-.SUFFIXE:
+.SUFFIXES:
 .SUFFIXES: .c .o .h
 
 # ******************************** CC AND FLAGS ****************************** #
