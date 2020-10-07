@@ -10,6 +10,7 @@ RM = /bin/rm
 
 CC = gcc
 AR = ar
+
 ARFLAGS = -rcs
 CFLAGS = -Wall -Wextra -Werror
 IFLAGS = -I$(INC_DIR)
@@ -99,7 +100,7 @@ clean:
 
 .PHONY: fclean
 fclean: clean
-	@$(RM) -rf $(NAME)
+	@$(RM) $(NAME)
 	@echo "Removed\t\t$(NAME)"
 
 .PHONY: re
