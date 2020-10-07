@@ -6,7 +6,7 @@
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:38:29 by mboivin           #+#    #+#             */
-/*   Updated: 2020/09/30 15:57:26 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/10/07 22:09:43 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ t_mat4x4		*malloc_mat4x4(t_vec4 a, t_vec4 b, t_vec4 c, t_vec4 d)
 {
 	t_mat4x4	*result;
 
-	result = (t_mat4x4 *)malloc(sizeof(t_mat4x4));
+	result = malloc(sizeof(t_mat4x4));
 	if (!result)
 		return (NULL);
 	*result = create_mat4x4(a, b, c, d);
