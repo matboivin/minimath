@@ -6,7 +6,7 @@
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:38:29 by mboivin           #+#    #+#             */
-/*   Updated: 2020/10/17 18:15:39 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/10/17 18:52:01 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ t_vec2		add_vec2(t_vec2 a, t_vec2 b)
 
 t_vec2		sub_vec2(t_vec2 a, t_vec2 b)
 {
-	return (add_vec2(a, rev_sign_vec2(b)));
+	return (add_vec2(a, rev_dir_vec2(b)));
 }
 
 /*

@@ -6,17 +6,17 @@
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:38:29 by mboivin           #+#    #+#             */
-/*   Updated: 2020/10/17 18:14:48 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/10/17 18:54:16 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minimath.h"
 
 /*
-** This function reverses the sign of the members of a 2D vector
+** This function reverses the direction of a 2D vector
 */
 
-t_vec2		rev_sign_vec2(t_vec2 v)
+t_vec2		rev_dir_vec2(t_vec2 v)
 {
 	return (scale_vec2(REVUNIT_VALUE, v));
 }
