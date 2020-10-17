@@ -6,7 +6,7 @@
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:38:29 by mboivin           #+#    #+#             */
-/*   Updated: 2020/09/30 15:59:39 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/10/17 18:13:30 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ t_vec3		add_vec3(t_vec3 a, t_vec3 b)
 
 t_vec3		sub_vec3(t_vec3 a, t_vec3 b)
 {
-	return (add_vec3(a, scale_vec3(REVUNIT_VALUE, b)));
+	return (add_vec3(a, rev_sign_vec3(b)));
 }
 
 /*

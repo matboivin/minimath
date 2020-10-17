@@ -6,7 +6,7 @@
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:38:29 by mboivin           #+#    #+#             */
-/*   Updated: 2020/09/30 15:57:56 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/10/17 18:12:06 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ t_mat4x4		invert_mat4x4(t_mat4x4 mat)
 	v_y = scale_vec3((UNIT_VALUE / ft_sqr(norm_vec3(v_y))), v_y);
 	v_z = create_vec3(mat.c1.z, mat.c2.z, mat.c3.z);
 	v_z = scale_vec3((UNIT_VALUE / ft_sqr(norm_vec3(v_z))), v_z);
-	v_trans = scale_vec3(-1, create_vec3(mat.c4.x, mat.c4.y, mat.c4.z));
+	v_trans = rev_sign_vec3(create_vec3(mat.c4.x, mat.c4.y, mat.c4.z));
 	result.c1 = create_vec4(v_x.x, v_x.y, v_x.z, DEFAULT_VALUE);
 	result.c2 = create_vec4(v_y.x, v_y.y, v_y.z, DEFAULT_VALUE);
 	result.c3 = create_vec4(v_z.x, v_z.y, v_z.z, DEFAULT_VALUE);

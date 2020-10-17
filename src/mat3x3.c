@@ -6,7 +6,7 @@
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:38:29 by mboivin           #+#    #+#             */
-/*   Updated: 2020/10/07 22:09:31 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/10/17 18:02:25 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@
 ** malloc_mat3x3()   :  Malloc function
 ** destroy_mat3x3()  :  Destructor
 ** free_mat3x3()     :  Free function
-** identity_mat3x3() :  Create an identity matrix
 */
 
 t_mat3x3		create_mat3x3(t_vec3 a, t_vec3 b, t_vec3 c)

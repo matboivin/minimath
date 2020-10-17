@@ -6,7 +6,7 @@
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:38:29 by mboivin           #+#    #+#             */
-/*   Updated: 2020/10/07 22:09:43 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/10/17 18:02:33 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@
 ** malloc_mat4x4()   :  Malloc function
 ** destroy_mat4x4()  :  Destructor
 ** free_mat4x4()     :  Free function
-** identity_mat4x4() :  Create an identity matrix
 */
 
 t_mat4x4		create_mat4x4(t_vec4 a, t_vec4 b, t_vec4 c, t_vec4 d)

@@ -6,11 +6,20 @@
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:38:29 by mboivin           #+#    #+#             */
-/*   Updated: 2020/09/30 16:00:58 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/10/17 18:16:24 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minimath.h"
+
+/*
+** This function reverses the sign of the members of a 4D vector
+*/
+
+t_vec4		rev_sign_vec4(t_vec4 v)
+{
+	return (scale_vec4(REVUNIT_VALUE, v));
+}
 
 /*
 ** This function copies 4D vector src to 4D vector dst
