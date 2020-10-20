@@ -6,28 +6,7 @@ RM = /bin/rm
 .SUFFIXES:
 .SUFFIXES: .c .o .h
 
-# ******************************** CC AND FLAGS ****************************** #
-
-CC = gcc
-AR = ar
-
-ARFLAGS = -rcs
-CFLAGS = -Wall -Wextra -Werror
-IFLAGS = -I$(INC_DIR)
-LFLAGS = -lm
-
-# ******************************* DIRS AND PATHS ***************************** #
-
-INC_DIR		=	includes
-SRC_DIR		=	src
-OBJ_DIR		=	obj
-
-INC			=	$(addprefix $(INC_DIR)/, $(INC_FILES))
-OBJ			=	$(addprefix $(OBJ_DIR)/, $(SRC:%.c=%.o))
-
-VPATH		=	$(SRC_DIR)
-
-# ********************************** FILES *********************************** #
+# ********************************** INCLUDES ******************************** #
 
 INC_FILES	=	minimath.h			\
 				minimath_define.h	\
@@ -39,7 +18,9 @@ INC_FILES	=	minimath.h			\
 				minimath_vec3.h		\
 				minimath_vec4.h
 
-SRC		=		vec2.c				\
+# *********************************** C FILES ******************************** #
+
+SRC_FILES	=	vec2.c				\
 				vec2_op.c			\
 				vec2_op2.c			\
 				vec2_norm.c			\
@@ -64,13 +45,34 @@ SRC		=		vec2.c				\
 				ft_angle.c			\
 				ft_sqr.c
 
+# ********************************** OBJECTS ********************************* #
+
+OBJ_FILES	=	$(SRC_FILES:%.c=%.o)
+
+# ******************************* DIRS AND PATHS ***************************** #
+
+INC_DIR		=	includes
+SRC_DIR		=	src
+OBJ_DIR		=	obj
+
+INC			=	$(addprefix $(INC_DIR)/, $(INC_FILES))
+OBJ			=	$(addprefix $(OBJ_DIR)/, $(OBJ_FILES))
+
+VPATH		=	$(SRC_DIR)
+
+# ******************************** CC AND FLAGS ****************************** #
+
+CC			=	gcc
+AR			=	ar
+
+ARFLAGS		=	-rcs
+CFLAGS		=	-Wall -Wextra -Werror -g3
+IFLAGS		=	-I$(INC_DIR)
+LFLAGS		=	-lm
+
 # ********************************** RULES *********************************** #
 
 all: $(NAME)
-
-$(NAME): $(OBJ_DIR) $(OBJ) $(INC)
-	@$(AR) $(ARFLAGS) $@ $(OBJ)
-	@echo "\nOK\t\t$(NAME) is ready"
 
 # OBJ DIR #
 
@@ -84,10 +86,9 @@ $(OBJ_DIR)/%.o : %.c
 	@echo "\r\033[KCompiling\t$< \c"
 	@$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@
 
-# DEBUG #
-
-debug: CFLAGS+=-g3
-debug: re
+$(NAME): $(OBJ_DIR) $(OBJ) $(INC)
+	@$(AR) $(ARFLAGS) $@ $(OBJ)
+	@echo "\nOK\t\t$(NAME) is ready"
 
 # CLEAN #
 
@@ -101,4 +102,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all debug clean fclean re
+.PHONY: all clean fclean re
