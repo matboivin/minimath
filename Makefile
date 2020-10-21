@@ -96,7 +96,7 @@ clean:
 	@echo "Cleaned\t\tobject files"
 
 fclean: clean
-	@$(RM) $(NAME)
+	@$(RM) -f $(NAME)
 	@echo "Removed\t\t$(NAME)"
 
 re: fclean all
