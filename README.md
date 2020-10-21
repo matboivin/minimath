@@ -15,7 +15,7 @@ $ make
 
 To use the library:
 ```console
-$ gcc foo.c -L. -lminimath
+$ gcc foo.c -L. -lminimath -lm
 ```
 
 ### Example usage

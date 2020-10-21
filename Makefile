@@ -6,7 +6,7 @@ RM = /bin/rm
 .SUFFIXES:
 .SUFFIXES: .c .o .h
 
-# ********************************** INCLUDES ******************************** #
+# ********************************* INCLUDES ********************************* #
 
 INC_FILES	=	minimath.h			\
 				minimath_define.h	\
@@ -18,7 +18,7 @@ INC_FILES	=	minimath.h			\
 				minimath_vec3.h		\
 				minimath_vec4.h
 
-# *********************************** C FILES ******************************** #
+# ********************************* C FILES ********************************** #
 
 SRC_FILES	=	vec2.c				\
 				vec2_op.c			\
@@ -45,30 +45,29 @@ SRC_FILES	=	vec2.c				\
 				ft_angle.c			\
 				ft_sqr.c
 
-# ********************************** OBJECTS ********************************* #
+# ********************************* OBJECTS ********************************** #
 
-OBJ_FILES	=	$(SRC_FILES:%.c=%.o)
+OBJ_FILES = $(SRC_FILES:%.c=%.o)
 
-# ******************************* DIRS AND PATHS ***************************** #
+# ****************************** DIRS AND PATHS ****************************** #
 
-INC_DIR		=	includes
-SRC_DIR		=	src
-OBJ_DIR		=	obj
+INC_DIR = includes
+SRC_DIR = src
+OBJ_DIR = obj
 
-INC			=	$(addprefix $(INC_DIR)/, $(INC_FILES))
-OBJ			=	$(addprefix $(OBJ_DIR)/, $(OBJ_FILES))
+INC = $(addprefix $(INC_DIR)/, $(INC_FILES))
+OBJ = $(addprefix $(OBJ_DIR)/, $(OBJ_FILES))
 
-VPATH		=	$(SRC_DIR)
+VPATH = $(SRC_DIR)
 
-# ******************************** CC AND FLAGS ****************************** #
+# *************************** COMPILING AND FLAGS **************************** #
 
-CC			=	gcc
-AR			=	ar
+CC = gcc
+AR = ar
 
-ARFLAGS		=	-rcs
-CFLAGS		=	-Wall -Wextra -Werror -g3
-IFLAGS		=	-I$(INC_DIR)
-LFLAGS		=	-lm
+ARFLAGS = -rcs
+CFLAGS = -Wall -Wextra -Werror -g3
+CPPFLAGS = -I$(INC_DIR)
 
 # ********************************** RULES *********************************** #
 
@@ -84,7 +83,7 @@ $(OBJ_DIR):
 
 $(OBJ_DIR)/%.o : %.c
 	@echo "\r\033[KCompiling\t$< \c"
-	@$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@
+	@$(CC) $(CPPFLAGS) $(CFLAGS) -c -o $@ $<
 
 $(NAME): $(OBJ_DIR) $(OBJ) $(INC)
 	@$(AR) $(ARFLAGS) $@ $(OBJ)
