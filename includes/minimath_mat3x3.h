@@ -6,12 +6,15 @@
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:32:52 by mboivin           #+#    #+#             */
-/*   Updated: 2020/09/13 01:22:10 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/10/24 00:51:34 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MINIMATH_MAT3X3_H
 # define MINIMATH_MAT3X3_H
+# include "minimath_define.h"
+# include "minimath_op.h"
+# include "minimath_vec3.h"
 
 /*
 ** 3x3 Matrix (Column Major)

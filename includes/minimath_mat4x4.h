@@ -6,12 +6,15 @@
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:32:52 by mboivin           #+#    #+#             */
-/*   Updated: 2020/08/20 20:12:47 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/10/24 00:53:08 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MINIMATH_MAT4X4_H
 # define MINIMATH_MAT4X4_H
+# include "minimath_define.h"
+# include "minimath_op.h"
+# include "minimath_vec4.h"
 
 /*
 ** 4x4 Matrix (Column Major)

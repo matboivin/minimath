@@ -6,11 +6,12 @@
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:38:29 by mboivin           #+#    #+#             */
-/*   Updated: 2020/10/07 22:10:05 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/10/24 00:55:36 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minimath.h"
+#include <stdlib.h>
+#include "minimath_vec4.h"
 
 /*
 ** 4D Vector

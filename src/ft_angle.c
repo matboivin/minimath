@@ -6,11 +6,13 @@
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/04 23:36:36 by mboivin           #+#    #+#             */
-/*   Updated: 2020/09/30 15:55:48 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/10/24 00:49:03 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minimath.h"
+#include <math.h>
+#include "minimath_define.h"
+#include "minimath_op.h"
 
 /*
 ** This function converts an angle in degrees to radians

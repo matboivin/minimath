@@ -6,11 +6,12 @@
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:38:29 by mboivin           #+#    #+#             */
-/*   Updated: 2020/10/17 18:52:01 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/10/24 00:59:01 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minimath.h"
+#include "minimath_vec3.h"
+#include "minimath_mat4x4.h"
 
 /*
 ** This function transposes a 4x4 matrix

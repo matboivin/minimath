@@ -6,11 +6,13 @@
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:38:29 by mboivin           #+#    #+#             */
-/*   Updated: 2020/09/30 16:02:33 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/10/24 00:56:02 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minimath.h"
+#include <math.h>
+#include "minimath_define.h"
+#include "minimath_vec3.h"
 
 /*
 ** This function computes the dot product of a 3D vector with itself

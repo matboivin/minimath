@@ -6,11 +6,12 @@
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:38:29 by mboivin           #+#    #+#             */
-/*   Updated: 2020/10/17 18:54:22 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/10/24 00:56:40 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minimath.h"
+#include "minimath_define.h"
+#include "minimath_vec3.h"
 
 /*
 ** This function reverses the direction of a 3D vector

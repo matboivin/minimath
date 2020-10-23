@@ -6,11 +6,14 @@
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:38:29 by mboivin           #+#    #+#             */
-/*   Updated: 2020/09/30 15:56:08 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/10/24 00:50:11 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minimath.h"
+#include "minimath_vec3.h"
+#include "minimath_vec4.h"
+#include "minimath_mat4x4.h"
+#include "minimath_mat_vec.h"
 
 /*
 ** This function multiplies a 4x4 matrix and a 3D vector producing a 4D vector

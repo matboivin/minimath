@@ -6,12 +6,13 @@
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:32:52 by mboivin           #+#    #+#             */
-/*   Updated: 2020/10/17 18:51:49 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/10/24 00:58:28 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MINIMATH_VEC4_H
 # define MINIMATH_VEC4_H
+# include <stdbool.h>
 
 typedef struct	s_vec4
 {

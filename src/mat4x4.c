@@ -6,11 +6,12 @@
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:38:29 by mboivin           #+#    #+#             */
-/*   Updated: 2020/10/17 18:02:33 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/10/24 00:52:36 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minimath.h"
+#include <stdlib.h>
+#include "minimath_mat4x4.h"
 
 /*
 ** 4x4 Matrix (Column Major)

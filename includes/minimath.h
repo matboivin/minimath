@@ -6,16 +6,12 @@
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:32:52 by mboivin           #+#    #+#             */
-/*   Updated: 2020/09/30 15:55:05 by mboivin          ###   ########.fr       */
+/*   Updated: 2020/10/24 00:58:11 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MINIMATH_H
 # define MINIMATH_H
-
-# include <math.h>
-# include <stdbool.h>
-# include <stdlib.h>
 
 # include "minimath_define.h"
 # include "minimath_op.h"
