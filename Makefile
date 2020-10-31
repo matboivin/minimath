@@ -81,13 +81,15 @@ $(OBJ_DIR):
 
 # COMPILING #
 
-$(OBJ_DIR)/%.o : %.c
+$(OBJ_DIR)/%.o : %.c $(INC)
 	@echo "\r\033[KCompiling\t$< \c"
-	@$(CC) $(CPPFLAGS) $(CFLAGS) -c -o $@ $<
+	@$(CC) $(CPPFLAGS) $(CFLAGS) -o $@ -c $<
+
+# ARCHIVING AND INDEXING #
 
 $(NAME): $(OBJ_DIR) $(OBJ) $(INC)
 	@$(AR) $(ARFLAGS) $@ $(OBJ)
-	@echo "\nOK\t\t$(NAME) is ready"
+	@echo "\nOK\t\t$@ is ready"
 
 # CLEAN #
 
