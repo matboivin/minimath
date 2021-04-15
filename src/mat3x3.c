@@ -6,7 +6,7 @@
 /*   By: mboivin <mboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 21:38:29 by mboivin           #+#    #+#             */
-/*   Updated: 2020/10/24 00:52:14 by mboivin          ###   ########.fr       */
+/*   Updated: 2021/04/15 18:57:19 by mboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ t_mat3x3		create_mat3x3(t_vec3 a, t_vec3 b, t_vec3 c)
 
 t_mat3x3		*malloc_mat3x3(t_vec3 a, t_vec3 b, t_vec3 c)
 {
-	t_mat3x3	*result;
+	t_mat3x3	*result = NULL;
 
 	result = malloc(sizeof(t_mat3x3));
 	if (!result)
