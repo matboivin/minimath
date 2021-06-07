@@ -12,7 +12,7 @@ OBJ_FILES = $(SRC_FILES:%.c=%.o)
 
 # ****************************** DIRS AND PATHS ****************************** #
 
-INC_DIR = includes
+INC_DIR = include
 SRC_DIR = src
 OBJ_DIR = obj
 
