@@ -9,15 +9,14 @@ All programs written in C follow 42 style guideline.
 
 This project was done for **learning purposes** and is thus **not intended for production**. 
 
-## Getting Started
+## Requirements
 
 This program was developed on Debian Linux.
 
-### Prerequisites
+- make
+- gcc
 
-GNU make and a C compiler.
-
-### Installing
+## Installation
 
 Clone the repository, change it to your working directory and run:
 ```console
