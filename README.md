@@ -7,7 +7,11 @@ All programs written in C follow 42 style guideline.
 
 ### Disclaimer
 
-This project was done for **learning purposes** and is thus **not intended for production**.  
+This project was done for **learning purposes** and is thus **not intended for production**. 
+
+## Getting Started
+
+This program was developed on Debian Linux.
 
 ### Prerequisites
 
@@ -20,14 +24,9 @@ Clone the repository, change it to your working directory and run:
 $ make
 ```
 
-To use the library:
-```console
-$ gcc foo.c -L. -lminimath -lm
-```
+## Example usage
 
-### Example usage
-
-[miniRT](https://github.com/matboivin/miniRT): a minimal ray tracer in C.
+[raytracer](https://github.com/matboivin/raytracer): a simple ray tracer in C.
 
 ### License
 
